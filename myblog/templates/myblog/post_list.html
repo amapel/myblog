@@ -1,0 +1,149 @@
+{% load staticfiles %}
+<html>
+<head>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+			<title> My Blog </title>
+
+			<link rel="stylesheet" type="text/css" href="{% static 'css/myblog.css' %}" />
+			<link rel="stylesheet" type="text/css" href="{% static 'css/animaciones.css' %}" />
+			<link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+			
+			<link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap.css' %}">
+			
+			
+			<script type="text/javascript" src="{% static 'js/jquery-1.11.0.min.js' %}"> </script>
+			<script type="text/javascript" src="{% static 'js/jquery.spritely.js' %}"> </script>
+			<script src="{% static 'jquery.js' %}" type="text/javascript"></script>
+			
+			
+			
+</head>
+<body>
+	<div class="container-fluid"> 
+	<nav class="navbar navbar-fixed-top " role="navigation">
+			 
+			<div class="navbar-header">
+						<button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"><!--data-colapser= se modifica a movil,-->	
+								<span class="sr-only"> Esto solo aparece si el navagador no soprta menus </span>
+								<span class="icon-bar"></span> <!--! 1ra linea del boton para mobiles-->
+								<span class="icon-bar"></span> <!--! 2ra linea del boton para mobiles-->
+								<span class="icon-bar"></span> <!--! 3ra linea del boton para mobiles-->
+																				
+						</button>
+                    <h2><strong>Blog</strong> Pam</h2>
+            </div>
+
+           <div id="main-nav" class="collapse navbar-collapse"><!--contienne as opciones del menu a collapsar-->
+
+                    <ul class="nav navbar-nav navbar-right" id="mainNav">
+                        <li class="active"><a href="#inicio" class="scroll-link">Inicio</a></li>
+                        <li><a href="#posts" class="scroll-link">Post</a></li>
+                        <li><a href="#contacto" class="scroll-link">Contacto</a></li>
+                    </ul>
+            </div>
+	</nav>
+	</div>
+	
+   		<section id="inicio" >
+   			
+	   			<img src="{% static 'img/arbol rosa.png' %}" class="img-responsive" >
+	   			
+	   			
+	   				<div id="panel" class="animated fadeInRight" >  <div id="texto"><p>En éste blog encontrarás aplicaciones hechas con diferentes librerías como Jquery, Spritely, y muchas cosas más, consulta la galería y deja tu comentario </p></div></div>
+
+	   				<!--<div class="desliza"><a class="tirar"></a></div>-->
+	   			
+
+	   			<div id="hoja"> </div>
+	   			 <div id="hoja1"> </div>
+	   			 <div id="hoja2"> </div>
+	   			 <div id="hoja3"> </div>
+	   			 <div id="hoja4"> </div>
+	   			 <div id="hoja5"> </div>   
+	   			 <div id="hoja6"> </div>
+	   			 <div id="hoja7"> </div>
+	   			 <div id="hoja8"> </div>
+	   			 <div id="hoja9"> </div>
+	   			
+	   			<script type="text/javascript">
+	   			   		$(document).ready(function(){
+    						$("#hoja").sprite({fps:6, no_of_frames:10,})    /*cuando existe la librería de jquery*/
+							              .spRandom({ top: 100, bottom: 0, left:300, right:100 });
+
+							$("#hoja1").sprite({fps:7, no_of_frames:10,})  
+							              .spRandom({ top: 600, bottom: 0, left:600, right:200 });
+
+							$("#hoja2").sprite({fps:6, no_of_frames:10,})   
+							              .spRandom({ top: 400, bottom: 20, left:900, right:100 });
+
+							$("#hoja3").sprite({fps:5, no_of_frames:10,}) 
+							              .spRandom({ top: 500, bottom: 0, left:300, right:0 });
+
+							$("#hoja4").sprite({fps:6, no_of_frames:10,})   
+							              .spRandom({ top: 600, bottom: 0, left:600, right:20 });
+
+							$("#hoja5").sprite({fps:8, no_of_frames:10,})  
+							              .spRandom({ top: 300, bottom: 200, left:900, right:0 });
+							$("#hoja6").sprite({fps:6, no_of_frames:10,})   
+							              .spRandom({ top: 400, bottom: 20, left:900, right:100 });
+
+							$("#hoja7").sprite({fps:5, no_of_frames:10,}) 
+							              .spRandom({ top: 500, bottom: 0, left:300, right:0 });
+
+							$("#hoja8").sprite({fps:6, no_of_frames:10,})   
+							              .spRandom({ top: 600, bottom: 0, left:600, right:20 });
+
+							$("#hoja9").sprite({fps:8, no_of_frames:10,})  
+							              .spRandom({ top: 300, bottom: 200, left:900, right:0 });
+							});
+	   			   </script>
+		
+		</section>
+		<div class="row">
+			<div id="posts" class="col-md-8" > {{ posts }} </div>
+		<!--
+		{% for post in posts %}
+			<div id="posts" class="col-md-8" >
+				<p>Publicado: {{ post.published_date }}</p>
+				<h2><a href="">{{ post.title }}</a></h2> 
+				<div id="post">
+					<p>{{ post.text|linebreaks }}</p>
+				</div>
+			</div>
+		{% endfor %} -->
+			<div class="col-md-1"> </div>
+			<div class="col-md-2 well" id="menu"> <h4>Menu </h4> 
+				<div class="well">
+			        <p><a href="#">Mi perfil</a></p>
+			        <img src="{% static 'img/1a.jpg' %}" class="img-circle" height="55" width="55" alt="Avatar">
+			     </div>
+			</div>
+
+		</div>
+		
+			<footer class="container-fluid text-left" id="contacto">
+				<h4>Contacto:</h4> <hr>
+				<div class="pie" >
+					<ul>
+						
+					<li><i class="fa fa-phone"></i> 55 4079 3401 </li>
+					<li><i class="fa fa-envelope"></i> am.ap.el@hormail.com</li>
+					
+					</ul>
+				</div>
+				<div class="pie">
+					<ul>
+						
+					
+					<li><i class="fa fa-code"></i> varela.pythonanywhere.com</li>
+					<li><i class="fa fa-github"></i> amapel</li>
+					</ul>
+				</div>
+				
+				
+			</footer>
+
+	</div>
+</body>
+</html> 

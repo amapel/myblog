@@ -1,0 +1,190 @@
+/* estilos myblog.css */
+
+@font-face {
+            src: url("../font/NuevaStd-BoldCond.OTF");
+            font-family: nuevabold;        
+        }
+
+@font-face {
+            src: url('../font/NuevaStd-Cond.OTF');
+            font-family: nuevaStd;        
+        }
+nav{
+	background-color: rgba(249,129,123, 0.8);
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	z-index: 90;
+	top: 0px;
+	padding-left: 5px;
+	font-family: nuevaStd;
+	font-size: 1.5em;
+	
+}
+
+.icon-bar {
+  background-color: #F9F0ED;
+}
+
+nav h2{
+	color: #F9F0ED;
+	margin-left: 1%;
+
+}
+nav li a{
+	color: #DE6878;
+}
+
+
+section{
+	top: 2em;
+	width: 900px;
+	margin: 0px auto;
+}
+
+section img{
+	width: 800px;
+}
+
+
+#panel{
+	background-image: url(../img/cuadro.png);
+	position: absolute;
+	top: 200px;
+	right: 0px;
+	width: 350px;
+	z-index: .2;
+	opacity: 0.60;
+    		filter: alpha(opacity=60);
+}	
+#texto{
+	width: 200px;
+	right: -25%;
+	color: #666;
+	position: relative;
+	margin: 2%;
+
+}
+div#hoja, #hoja1, #hoja2, #hoja3, #hoja4, #hoja5, #hoja6, #hoja7, #hoja8, #hoja9 {
+	background-image: url("../img/hoja.png");
+	width: 59px;
+	background-repeat: no-repeat;
+	height: 59px;	
+	position: absolute;
+	}
+
+div#hoja{
+	top:400px;
+}
+
+div#hoja1{
+	top:200px;
+}
+
+div#hoja2{
+	top:300px;
+}
+
+div#hoja4{
+	top:450px;
+}
+
+div#hoja5{
+	top:10px;
+}
+
+div#hoja6{
+	top:30px;
+}
+
+#posts{
+	background-color: #F9F0ED;
+	height: 300px;
+	border-radius: 8px;
+	margin: 3%;
+}
+#posts h2{
+	color: #DE6878;
+	font-family: nuevaStd;
+}
+
+#post{
+	width: 60%;
+	height: 200px;
+	border: 1px solid #DE6878;
+	border-radius: 8px;
+	margin: 0px auto;
+}
+#post p {
+	color: #666;
+	margin: 1%;
+}
+#menu{
+	background-color: #F9F0ED;
+	height: 300px;
+	border-radius: 8px;
+	margin: 3%;
+	text-align: center;
+}
+#menu h4{
+	font-family: nuevaStd;
+	color: #666;
+	text-align: left;
+	font-size: 2em;
+}
+footer{
+	background-color: #DDC5BF;
+	width: 100%;
+	margin: 2%;
+	left: 0px;
+	bottom: 0px;
+	color: #666;
+	padding: 1%;
+
+}
+
+.pie{
+	
+	width: 250px;
+	text-align: left;
+	float: left;
+	
+}
+.pie li{
+	list-style-type: none;
+}
+
+/*///////////////////////////*/
+/*				responsivo: cel  */
+/*///////////////////////////*/
+
+@media screen and (max-width: 500px){
+	section{
+		top: 2em;
+		width: 490px;
+	}
+	#panel{
+		opacity: 0.40;
+    	filter: alpha(opacity=40);
+	}
+	#posts h2{
+		padding: 2%;
+	}
+}
+
+/*///////////////////////////*/
+/*				responsivo: tablet  */
+/*///////////////////////////*/
+
+@media screen and (max-width: 800px){
+	section{
+		width: 790px;
+		
+	}
+	#posts h2{
+		padding: 2%;
+	}
+	#post{
+		overflow: scroll;
+	}
+}
